@@ -168,6 +168,7 @@ func (s *Orm) updateSql(value interface{}) {
 	return
 }
 
+// 最开始是通过反射来做到扩展点(回掉)
 func (s *Orm) update(value interface{}) {
 	s.err(s.model.callMethod("BeforeUpdate"))
 	s.err(s.model.callMethod("BeforeSave"))
